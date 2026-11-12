@@ -28,62 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            button1 = new Button();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Title = new Label();
+            SecuringFolder = new Button();
             textBox1 = new TextBox();
-            label2 = new Label();
-            button2 = new Button();
+            PasswordLabel = new Label();
+            ChosingPathButton = new Button();
             textBox2 = new TextBox();
             label3 = new Label();
+            PasswordConfirmation = new Label();
+            ReinsertPasswordText = new TextBox();
             SuspendLayout();
             // 
-            // label1
+            // Title
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(88, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Folder securing";
-            label1.Click += label1_Click;
+            Title.AutoSize = true;
+            Title.Location = new Point(12, 9);
+            Title.Name = "Title";
+            Title.Size = new Size(88, 15);
+            Title.TabIndex = 0;
+            Title.Text = "Folder securing";
+            Title.Click += Title_Click;
             // 
-            // button1
+            // SecuringFolder
             // 
-            button1.Location = new Point(13, 127);
-            button1.Name = "button1";
-            button1.Size = new Size(114, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Secure folder";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            SecuringFolder.Location = new Point(13, 127);
+            SecuringFolder.Name = "SecuringFolder";
+            SecuringFolder.Size = new Size(114, 23);
+            SecuringFolder.TabIndex = 1;
+            SecuringFolder.Text = "Secure folder";
+            SecuringFolder.UseVisualStyleBackColor = true;
+            SecuringFolder.Click += SecuringFolder_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(100, 66);
+            textBox1.Location = new Point(101, 37);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(306, 23);
             textBox1.TabIndex = 2;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // label2
+            // PasswordLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 69);
-            label2.Name = "label2";
-            label2.Size = new Size(82, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Add password";
-            label2.Click += label2_Click;
+            PasswordLabel.AutoSize = true;
+            PasswordLabel.Location = new Point(13, 40);
+            PasswordLabel.Name = "PasswordLabel";
+            PasswordLabel.Size = new Size(82, 15);
+            PasswordLabel.TabIndex = 3;
+            PasswordLabel.Text = "Add password";
+            PasswordLabel.Click += PasswordLabel_Click;
             // 
-            // button2
+            // ChosingPathButton
             // 
-            button2.Location = new Point(252, 127);
-            button2.Name = "button2";
-            button2.Size = new Size(132, 23);
-            button2.TabIndex = 4;
-            button2.Text = "Chose path for folder";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ChosingPathButton.Location = new Point(252, 127);
+            ChosingPathButton.Name = "ChosingPathButton";
+            ChosingPathButton.Size = new Size(132, 23);
+            ChosingPathButton.TabIndex = 4;
+            ChosingPathButton.Text = "Chose path for folder";
+            ChosingPathButton.UseVisualStyleBackColor = true;
+            ChosingPathButton.Click += ChosingPathButton_Click;
             // 
             // textBox2
             // 
@@ -91,6 +95,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(306, 23);
             textBox2.TabIndex = 5;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label3
             // 
@@ -102,18 +107,37 @@
             label3.Text = "Folder path:";
             label3.Click += label3_Click;
             // 
+            // PasswordConfirmation
+            // 
+            PasswordConfirmation.AutoSize = true;
+            PasswordConfirmation.Location = new Point(-2, 72);
+            PasswordConfirmation.Name = "PasswordConfirmation";
+            PasswordConfirmation.Size = new Size(102, 15);
+            PasswordConfirmation.TabIndex = 7;
+            PasswordConfirmation.Text = "Reinsert password";
+            // 
+            // ReinsertPasswordText
+            // 
+            ReinsertPasswordText.Location = new Point(104, 69);
+            ReinsertPasswordText.Name = "ReinsertPasswordText";
+            ReinsertPasswordText.Size = new Size(302, 23);
+            ReinsertPasswordText.TabIndex = 8;
+            ReinsertPasswordText.TextChanged += ReinsertPasswordText_TextChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(418, 173);
+            Controls.Add(ReinsertPasswordText);
+            Controls.Add(PasswordConfirmation);
             Controls.Add(label3);
             Controls.Add(textBox2);
-            Controls.Add(button2);
-            Controls.Add(label2);
+            Controls.Add(ChosingPathButton);
+            Controls.Add(PasswordLabel);
             Controls.Add(textBox1);
-            Controls.Add(button1);
-            Controls.Add(label1);
+            Controls.Add(SecuringFolder);
+            Controls.Add(Title);
             Name = "Form1";
             Text = "Folder securing";
             Load += Form1_Load;
@@ -123,12 +147,14 @@
 
         #endregion
 
-        private Label label1;
-        private Button button1;
+        private Label Title;
+        private Button SecuringFolder;
         private TextBox textBox1;
-        private Label label2;
-        private Button button2;
+        private Label PasswordLabel;
+        private Button ChosingPathButton;
         private TextBox textBox2;
         private Label label3;
+        private Label PasswordConfirmation;
+        private TextBox ReinsertPasswordText;
     }
 }
