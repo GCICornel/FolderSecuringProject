@@ -47,13 +47,13 @@ namespace FolderSecuringProject
         {
             FolderInfo folderInfo = new FolderInfo();
             folderInfo.FolderPath = textBox2.Text;
-            folderInfo.PasswordHash = textBox1.Text;
-            folderInfo.PasswordReinsertedHash = ReinsertPasswordText.Text;
+            folderInfo.Password = textBox1.Text;
+            folderInfo.PasswordReinserted = ReinsertPasswordText.Text;
             folderInfo.IsLocked = true;
             FolderLogic folderLogic = new FolderLogic();
             if (folderLogic.CheckingValidUserInput(folderInfo) && !folderLogic.IsFolderLocked(folderInfo.FolderPath))
             {
-                folderLogic.SettingsFolderTextWrite(folderInfo);
+                folderLogic.SaveFolderInfo(folderInfo);
                 MessageBox.Show("Folder secured successfully!");
                 return;
             }
